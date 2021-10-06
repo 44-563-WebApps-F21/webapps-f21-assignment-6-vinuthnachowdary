@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Checkbox JavaScript</title>
+    </head>
+<body>
+    <h1>Satya orders a car</h1>
+    <form>
+        <input type ="checkbox" id="check_box1" name="check" value=electric>
+        <label for="check_box1">Electric</label> <br>
+    
+        <input type ="checkbox" id="check_box2" name="check" value="ac" > 
+        <label for="check_box2">AC</label><br>
+    
+        <input type ="checkbox" id="check_box3" name="check" value="gps"> 
+        <label for="check_box3">GPS</label><br>
+        
+    
+        <input type="button" onclick="orderCar()" value="Order a car">
+    </form> <br>
+    
+    <p id="result">This text will be replaced </p>
+    
+    <form>
+    <label for="property">Enter a property</label>
+    <input type="text" id="property" name="property_1" value="color"><br>
+    
+    <label for="properte">Enter a value</label>
+    <input type="text" id="properte" name="property_2"><br>
+    
+    <button onclick="updateCar()">Update the car</button>
+    </form>
+    <script> 
+        let my_car = {}
+        function orderCar(){
+            my_car = {}
+            var a = document.getElementById("check_box1").checked
+            var b = document.getElementById("check_box2").checked
+            var c = document.getElementById("check_box3").checked
+            if(a){
+                my_car.electric = document.getElementById("check_box1").checked
+                console.log(my_car)
+            }
+            else{
+                my_car.electric = false
+                console.log(my_car)
+            }
+            if(b){
+                my_car.ac = document.getElementById("check_box2").checked
+                console.log(my_car)
+            }
+            else{
+                my_car.ac = false
+                console.log(my_car)
+            }
+            if(c){
+                my_car.gps = document.getElementById("check_box3").checked
+                console.log(my_car)
+            }
+            else{
+                my_car.gps = false
+                console.log(my_car)
+            }
+            document.getElementById("result").innerHTML = "Electric : " + my_car.electric + ", "+ "AC : " + my_car.ac+ ", "+"GPS : " + my_car.gps;
+        }
+        </script>
+            
+
+    </body>
+    </html>
