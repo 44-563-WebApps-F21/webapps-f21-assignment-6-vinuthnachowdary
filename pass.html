@@ -19,37 +19,34 @@
         <p id="result">This text will be replaced </p>
 
         
-<script> 
-
-    var correct=0
-    var wrong=0
-
-    function processPhrase (){
-        console.log("Getting form values")
-        sphrase = document.getElementById("secret_phrase").value
-        phrase = document.getElementById("phrase").value
-        
-        out = document.getElementById("result")
-        if(sphrase == phrase){
-            correct = correct +1
-            alert("Access is allowed")
-            out.innerHTML = "Correct:" +correct
-        } else {
-            wrong = wrong +1
-            alert("Access is denied")
-            out.innerHTML = "Wrong:" +wrong;
-        }
+        <script>
+            var correct = 0;
+            var wrong = 0;
+            var usingImage = 1;
+            let count = 0;
+            function processPhrase() {
+                console.log("Checking the phrases entered");
+                secret_phrase = document.getElementById("secret_phrase").value;
+                check_phrase = document.getElementById("check_phrase").value;
+                out = document.getElementById("result");
     
-                count = count + 1;
-            
-            else{
-                alert("Account locked.");
-               
-            }  
-        
-        }
-     
-    </script>
+                if (count < 3) {
+                    if (secret_phrase == check_phrase) {
+                        correct = correct + 1;
+                        alert("Access allowed");
+                        out.innerHTML = "Correct counts: " + correct;
+                    } else {
+                        wrong = wrong + 1;
+                        alert("Access denied");
+                        out.innerHTML = "Wrong counts: " + wrong;
+                    }
+                    count = count + 1;
+                }
+                else{
+                    alert("Account locked.");
+                }
+            }
+            </script>
 <div class="container">
     <img src="Lion.jpg"  height="200" width="200" onclick="newImage()" id="image">
 <script>
