@@ -7,16 +7,22 @@
         
         <h1>Pass phrase by Satya Tummala</h1>
         <form>
-            <label for="form1_age">Enter the secret phrase </label>
-            <input type ="password" id="secret_phrase" name="form1_age" value="Let me in"> <br>
-        
-            <label for="form1_nick">Enter a phrase </label>
-            <input type ="text" id="phrase" name="form1_nick" autofocus> <br>
-        
+            <label for="secret_phrase">Enter the secret phrase: </label>
+            <input type="password" id="secret_phrase" name="secret_phrase" value="Let me in"> <br /><br />
+    
+            <label for="phrase">Enter a phrase: </label>
+            <input type="text" id="check_phrase" name="phrase" autofocus> <br /><br />
+    
             <input type="button" onclick="processPhrase()" value="Check the phrase">
+            <br />
+            <div style="display: flex">
+                <p id="result">Displays the correct and wrong counts here</p>
+            </div>
+            <br /><br />
+           
         </form>
-
-        <p id="result">This text will be replaced </p>
+    
+        <p id="result"> </p>
 
         
         <script>
