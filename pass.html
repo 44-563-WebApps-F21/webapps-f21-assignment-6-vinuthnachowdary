@@ -37,9 +37,18 @@
         } else {
             wrong = wrong +1
             alert("Access is denied")
-            out.innerHTML = "Wrong:" +wrong
+            out.innerHTML = "Wrong:" +wrong;
         }
-    }
+    
+                count = count + 1;
+            
+            else{
+                alert("Account locked.");
+               
+            }  
+        
+        }
+     
     </script>
 <div class="container">
     <img src="Lion.jpg"  height="200" width="200" onclick="newImage()" id="image">
