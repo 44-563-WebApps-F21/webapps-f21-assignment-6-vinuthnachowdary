@@ -2,63 +2,45 @@
 <html>
     <head>
         <title>Assignment 6</title>
-        
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin = "anonymous">
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    
-    
     </head>
     <body>
         
         <h1>Pass phrase by Satya Tummala</h1>
         <form>
-            <label for="secret_phrase">Enter the secret phrase: </label>
-            <input type="password" id="secret_phrase" name="secret_phrase" value="Let me in"> <br /><br />
-    
-            <label for="phrase">Enter a phrase: </label>
-            <input type="text" id="check_phrase" name="phrase" autofocus> <br /><br />
-    
+            <label for="form1_age">Enter the secret phrase </label>
+            <input type ="password" id="secret_phrase" name="form1_age" value="Let me in"> <br>
+        
+            <label for="form1_nick">Enter a phrase </label>
+            <input type ="text" id="phrase" name="form1_nick" autofocus> <br>
+        
             <input type="button" onclick="processPhrase()" value="Check the phrase">
-            <br />
-            <div style="display: flex">
-                <p id="result">Displays the correct and wrong counts here</p>
-            </div>
-            <br /><br />
-           
         </form>
-    
-        <p id="result"> </p>
+
+        <p id="result">This text will be replaced </p>
 
         
-        <script>
-            var correct = 0;
-            var wrong = 0;
-            var usingImage = 1;
-            let count = 0;
-            function processPhrase() {
-                console.log("Checking the phrases entered");
-                secret_phrase = document.getElementById("secret_phrase").value;
-                check_phrase = document.getElementById("check_phrase").value;
-                out = document.getElementById("result");
-    
-                if (count < 3) {
-                    if (secret_phrase == check_phrase) {
-                        correct = correct + 1;
-                        alert("Access allowed");
-                        out.innerHTML = "Correct counts: " + correct;
-                    } else {
-                        wrong = wrong + 1;
-                        alert("Access denied");
-                        out.innerHTML = "Wrong counts: " + wrong;
-                    }
-                    count = count + 1;
-                }
-                else{
-                    alert("Account locked.");
-                }
-            }
-            </script>
+<script> 
+
+    var correct=0
+    var wrong=0
+
+    function processPhrase (){
+        console.log("Getting form values")
+        sphrase = document.getElementById("secret_phrase").value
+        phrase = document.getElementById("phrase").value
+        
+        out = document.getElementById("result")
+        if(sphrase == phrase){
+            correct = correct +1
+            alert("Access is allowed")
+            out.innerHTML = "Correct:" +correct
+        } else {
+            wrong = wrong +1
+            alert("Access is denied")
+            out.innerHTML = "Wrong:" +wrong
+        }
+    }
+    </script>
 <div class="container">
     <img src="Lion.jpg"  height="200" width="200" onclick="newImage()" id="image">
 <script>
